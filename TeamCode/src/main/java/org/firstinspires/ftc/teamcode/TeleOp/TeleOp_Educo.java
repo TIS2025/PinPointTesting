@@ -132,11 +132,6 @@ public class TeleOp_Educo extends LinearOpMode {
                     driveCommand(C1,drive_coeff)
             );
 
-            botHeading = drive.pose.heading.toDouble();
-            if (C1.options && !P1.options && driveState == DriveState.FIELD_CENTRIC) {
-                drive.navxMicro.initialize();
-            }
-
             ftc = updateAction();
 
             if(C1.left_trigger>0.5 && !HANGER_FLAG1) {

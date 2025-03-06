@@ -126,7 +126,6 @@ public class TeleOp_Aadhaar extends LinearOpMode {
                     );
                     break;
                 case FIELD_CENTRIC:
-                    drive.DriveFieldCentric(-C1.left_stick_x,-C1.left_stick_y,C1.right_stick_x,botHeading,drive_coeff);
                     break;
             }
 
@@ -135,11 +134,6 @@ public class TeleOp_Aadhaar extends LinearOpMode {
             }
             if(C2.left_trigger>0.5 && C2.right_trigger>0.5 && driveState == DriveState.FIELD_CENTRIC){
                 driveState = DriveState.BOT_CENTRIC;
-            }
-
-            botHeading = drive.pose.heading.toDouble();
-            if (C1.options && !P1.options && driveState == DriveState.FIELD_CENTRIC) {
-                drive.navxMicro.initialize();
             }
 
             ftc = updateAction();
